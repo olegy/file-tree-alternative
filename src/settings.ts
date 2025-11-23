@@ -23,6 +23,7 @@ export interface FileTreeAlternativePluginSettings {
     excludedFolders: string;
     hideAttachments: boolean;
     attachmentsFolderName: string;
+    excludedAttachFolder: string;
     folderIcon: FolderIcon;
     folderCount: boolean;
     folderCountOption: string;
@@ -71,6 +72,7 @@ export const DEFAULT_SETTINGS: FileTreeAlternativePluginSettings = {
     deleteFileOption: 'trash',
     showFileNameAsFullPath: false,
     bookmarksEvents: false,
+    excludedAttachFolder: 'images',
 };
 
 export class FileTreeAlternativePluginSettingsTab extends PluginSettingTab {
@@ -405,6 +407,18 @@ export class FileTreeAlternativePluginSettingsTab extends PluginSettingTab {
             .addTextArea((text) =>
                 text.setValue(this.plugin.settings.excludedExtensions).onChange((value) => {
                     this.plugin.settings.excludedExtensions = value;
+                    this.plugin.saveSettings();
+                })
+            );
+
+        new Setting(containerEl)
+            .setName('Excluded Attachment Folder Name')
+            .setDesc(
+                `Provide the name of the attachment folder to exclude from the folder tree. This will hide all folders with this name across the vault.`
+            )
+            .addText((text) =>
+                text.setValue(this.plugin.settings.excludedAttachFolder).onChange((value) => {
+                    this.plugin.settings.excludedAttachFolder = value;
                     this.plugin.saveSettings();
                 })
             );

@@ -23,6 +23,7 @@ export const getFilesUnderPath = (params: {
                     if (
                         excludedExtensions.includes(child.extension) ||
                         (plugin.settings.hideAttachments && child.path.toLowerCase().includes(plugin.settings.attachmentsFolderName.toLowerCase())) ||
+                        (plugin.settings.excludedAttachFolder && child.parent.path.toLowerCase().includes(plugin.settings.excludedAttachFolder.toLowerCase())) ||
                         excludedFolders.includes(child.parent.path)
                     )
                         continue;
@@ -69,6 +70,7 @@ export const createFolderTree = (params: { startFolder: TFolder; excludedFolders
                 let childFolder: TFolder = child as TFolder;
                 if (
                     (plugin.settings.hideAttachments && childFolder.name === plugin.settings.attachmentsFolderName) ||
+                    (plugin.settings.excludedAttachFolder && childFolder.name.toLowerCase() === plugin.settings.excludedAttachFolder.toLowerCase()) ||
                     (excludedFolders.length > 0 && excludedFolders.contains(child.path))
                 ) {
                     continue;

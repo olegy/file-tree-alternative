@@ -221,6 +221,10 @@ export function NestedFolders(props: NestedFoldersProps) {
         <React.Fragment>
             {Array.isArray(props.folderTree.children) &&
                 sortedFolderTree.map((child) => {
+                    // Skip rendering if the folder name matches the excluded attachment folder name
+                    if (child.folder.name.toLowerCase() === plugin.settings.excludedAttachFolder.toLowerCase()) {
+                        return null;
+                    }
                     return (
                         <React.Fragment key={child.folder.path}>
                             {child.children.length > 0 ? (
