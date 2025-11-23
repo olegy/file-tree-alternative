@@ -1,5 +1,7 @@
 # Obsidian File Tree Alternative Plugin
 
+Forked from [ozntel/file-tree-alternative](https://github.com/ozntel/file-tree-alternative).
+
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/ozntel/file-tree-alternative?style=for-the-badge)
 ![GitHub all releases](https://img.shields.io/github/downloads/ozntel/file-tree-alternative/total?style=for-the-badge)
 
@@ -75,14 +77,10 @@ As of version 2.3.2, the plugin supports Custom Style Setings. To be able to use
 You can also checkout the Youtube video created by Antone Heyward explaining the functionalities of the plugin:
 <a href="https://youtu.be/KBzE_BT0rtQ" target="_blank">Enhance The File Explorer File Tree Alternative Plugin</a>
 
-## Contact
-
-If you have any issue or you have any suggestion, please feel free to reach me out directly using contact page of my website [ozan.pl/contact/](https://www.ozan.pl/contact/) or directly to <me@ozan.pl>.
-
 ## Support
 
-If you are enjoying the plugin then you can support my work and enthusiasm by buying me a coffee:
+If you are enjoying the plugin then you can support the original author ([ozntel](https://github.com/ozntel))'s work and enthusiasm by buying them a coffee:
 
 <a href='https://ko-fi.com/L3L356V6Q' target='_blank'>
-    <img height='48' style='border:0px;height:48px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' />
+    <img height='48' style='border:0px;height:48px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy ozntel a Coffee at ko-fi.com' />
 </a>
