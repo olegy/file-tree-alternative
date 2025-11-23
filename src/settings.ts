@@ -92,18 +92,6 @@ export class FileTreeAlternativePluginSettingsTab extends PluginSettingTab {
 
         let lsh = new LocalStorageHandler({});
 
-        /* ------------- Buy Me a Coffee ------------- */
-
-        const coffeeDiv = containerEl.createDiv('coffee');
-        coffeeDiv.addClass('oz-coffee-div');
-        const coffeeLink = coffeeDiv.createEl('a', { href: 'https://ko-fi.com/L3L356V6Q' });
-        const coffeeImg = coffeeLink.createEl('img', {
-            attr: {
-                src: 'https://cdn.ko-fi.com/cdn/kofi2.png?v=3',
-            },
-        });
-        coffeeImg.height = 45;
-
         /* ------------- General Settings ------------- */
 
         containerEl.createEl('h2', { text: 'General' });
