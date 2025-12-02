@@ -101,6 +101,16 @@ const getFilesWithTag = (params: {
 
 export const handleRevealActiveFileButton = (params: { plugin: FileTreeAlternativePlugin }) => {
     let { plugin } = params;
+    // Activate file tree pane first
+    let leafs = plugin.app.workspace.getLeavesOfType(plugin.VIEW_TYPE);
+    if (leafs.length === 0) {
+        plugin.openFileTreeLeaf(true);
+    } else {
+        for (let leaf of leafs) {
+            plugin.app.workspace.revealLeaf(leaf);
+        }
+    }
+    // Then dispatch the reveal event
     let event = new CustomEvent(eventTypes.revealFile, {
         detail: {
             file: plugin.app.workspace.getActiveFile(),

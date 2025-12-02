@@ -359,7 +359,7 @@ export default function MainTreeComponent(props: MainTreeComponentProps) {
         // @ts-ignore
         const file: TFile = evt.detail.file;
         if (file && file instanceof TFile) {
-            await plugin.openFileTreeLeaf(true);
+            await plugin.openFileTreeLeaf(false);
             revealFileInFileTree(FileTreeUtils.TFile2OZFile(file));
         } else {
             new Notice('File not found');
